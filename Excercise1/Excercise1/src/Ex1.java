@@ -1,6 +1,13 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.Test;
+
 public class Ex1 {
     public static void main(String[] args) throws Exception {
-        String text = "abcv J4f4J . sdfv aaa 9876789";
+        System.out.println(Palindrom("abcv J4f4J . sdfv aaa 9876789"));
+    }
+
+    public static int Palindrom(String text) {
         int pal = 0;
         String[] words = text.split(" ");
         for (String word : words) {
@@ -17,6 +24,14 @@ public class Ex1 {
                 }
             }
         }
-        System.out.println(pal);
+        return pal;
+    }
+
+    @Test
+    public void textEx() {
+        assertEquals(3, Palindrom("abcv J4f4J . sdfv aaa 9876789"));
+        assertEquals(4, Palindrom("abcba J4f4J . sdfv aaa 9876789"));
+        assertEquals(1, Palindrom("abcv J4fg4J . sdfv aaa 98768789"));
+        assertEquals(0, Palindrom("."));
     }
 }

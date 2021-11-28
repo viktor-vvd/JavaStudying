@@ -7,5 +7,9 @@
         "Excercise2/Exercise2/src",
         "Excercise1/Excercise1/src",
         "Excercise7/Excercise7/src"
+    ],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Excercise1/Excercise1/lib/junit-platform-console-standalone-1.8.1.jar"
     ]
 }

@@ -1,8 +1,17 @@
+import static org.junit.Assert.assertEquals;
+
 import java.util.*;
+
+import org.junit.Test;
 
 public class Ex5 {
     public static void main(String[] args) throws Exception {
         String input = "(]";
+
+        System.out.println(IsValidStr(input));
+    }
+    public static boolean IsValidStr(String input)
+    {
         boolean isValid = true;
 
         Map<Character, Character> brackets = new HashMap<Character, Character>();
@@ -24,6 +33,17 @@ public class Ex5 {
                 st.push(input.toCharArray()[i]);
             }
         }
-        System.out.println(isValid && st.empty());
+        return isValid && st.empty();
     }
+
+    @Test
+    public void textEx() {
+        assertEquals(true, IsValidStr("()"));
+        assertEquals(true, IsValidStr("()[]{}"));
+        assertEquals(false, IsValidStr("(]"));
+        assertEquals(false, IsValidStr("([)]"));
+        assertEquals(true, IsValidStr("{[]}"));
+        assertEquals(false, IsValidStr("{[a]}"));
+    }
+
 }
